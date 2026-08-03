@@ -1,22 +1,28 @@
-# Maven-Dependency-Assistant
+# Maven Dependency Assistant
 
 ![Build](https://github.com/Memory2314/Maven-Dependency-Assistant/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/33294-maven-dependency-assistant.svg)](https://plugins.jetbrains.com/plugin/33294-maven-dependency-assistant)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/33294-maven-dependency-assistant.svg)](https://plugins.jetbrains.com/plugin/33294-maven-dependency-assistant)
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [group](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml), [name](./src/main/resources/META-INF/plugin.xml), and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin [description](./src/main/resources/META-INF/plugin.xml) (see [Tips][docs:plugin-description]) and this README to describe what your plugin does.
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+English | [简体中文](./README_CN.md)
 
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+An IntelliJ Platform plugin for searching Maven Central and copying ready-to-use dependency snippets.
+
+## Features
+
+- Search by artifact name, Maven coordinates, or class name.
+- Browse artifact versions and release dates.
+- Generate snippets for Maven, Gradle, SBT, Mill, Ivy, Grape, Leiningen, and Buildr.
+- Choose the dependency scope and Gradle Groovy or Kotlin DSL format.
+- Group and paginate search results.
+- Cache and optionally preload results.
+- English and Simplified Chinese interfaces.
+
+## Usage
+
+Open **Maven Dependency Search** from the tool window or **Tools | Search Maven Dependency** (`Ctrl+Shift+D`). Search for an artifact, select a version and build tool, then click the preview to copy the dependency snippet.
+
+Plugin options are available under **Settings | Tools | Maven Dependency Assistant**.
 
 ## Installation
 
@@ -27,9 +33,9 @@ This Fancy IntelliJ Platform Plugin is going to be your implementation of the br
 
 - Using JetBrains Marketplace:
 
-  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
+  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/33294-maven-dependency-assistant) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
 
-  You can also download the [latest release](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID/versions) from JetBrains Marketplace and install it manually using
+  You can also download the [latest release](https://plugins.jetbrains.com/plugin/33294-maven-dependency-assistant/versions) from JetBrains Marketplace and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 - Manually:
@@ -37,9 +43,18 @@ This Fancy IntelliJ Platform Plugin is going to be your implementation of the br
   Download the [latest release](https://github.com/Memory2314/Maven-Dependency-Assistant/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+## Build
 
----
-Plugin based on the [IntelliJ Platform Plugin Template][template].
+JDK 21 is required.
 
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
-[docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
+```shell
+./gradlew buildPlugin
+```
+
+The plugin archive is generated in `build/distributions`.
+
+See [CHANGELOG.md](./CHANGELOG.md) for release notes.
+
+## License
+
+LSPosed is licensed under the **GNU General Public License v3 (GPL-3)** (http://www.gnu.org/copyleft/gpl.html).

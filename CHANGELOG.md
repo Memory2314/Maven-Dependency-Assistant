@@ -1,7 +1,22 @@
-<!-- Keep a Changelog guide -> https://keepachangelog.com -->
-
 # Maven-Dependency-Assistant Changelog
 
 ## [Unreleased]
 ### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+- Add Maven Central search by keyword, exact coordinates, and class name
+- Display artifact versions and release dates
+- Generate dependency snippets for 8 build tools
+- Support dependency scope selection
+- Support Gradle Groovy and Kotlin DSL formats
+- Group and paginate search results
+- Implement caching and auto-preloading for faster queries
+- Localize interface for English and Simplified Chinese
+
+### 新增
+- 支持 Maven Central 搜索（关键词、精确坐标、类名）
+- 显示构件版本及发布日期
+- 生成 8 种构建工具依赖代码
+- 支持依赖 Scope 选择
+- 支持 Gradle Groovy 和 Kotlin DSL 格式
+- 搜索结果分组与分页
+- 缓存与自动预加载，提升查询速度
+- 中英文界面本地化

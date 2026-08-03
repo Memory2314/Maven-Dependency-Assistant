@@ -1,19 +1,48 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.memory2314.mavendependencyassistant</id>
-    <name>Maven-Dependency-Assistant</name>
-    <vendor>memory2314</vendor>
-    <description><![CDATA[
-        <p><b>Maven-Dependency-Assistant</b> is a repository that provides a pure template to make it easier to create a new plugin project.</p>
-        <p>The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.</p>
-    ]]></description>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>io.github.memory2314.mavendependencyassistant</id>
 
+    <!-- Public plugin name should be written in Title Case.
+     Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>Maven Dependency Assistant</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor>Memory</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        Quickly search Maven Central, choose a version, and copy a ready-to-use Maven dependency snippet.
+        ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <resource-bundle>messages.MyMessageBundle</resource-bundle>
 
+    <!-- Extensions defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.memory2314.mavendependencyassistant.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.memory2314.mavendependencyassistant.startup.MyProjectActivity" />
+        <toolWindow id="Maven Dependency Search" factoryClass="io.github.memory2314.mavendependencyassistant.MyToolWindowFactory"
+                    anchor="right" icon="AllIcons.Nodes.PpLib"/>
+        <applicationConfigurable
+                id="io.github.memory2314.mavendependencyassistant.settings"
+                parentId="tools"
+                instance="io.github.memory2314.mavendependencyassistant.settings.MavenDependencyConfigurable"
+                displayName="Maven Dependency Assistant"/>
+        <notificationGroup id="Maven Dependency Assistant" displayType="BALLOON" isLogByDefault="false"/>
     </extensions>
+
+    <actions>
+        <action id="io.github.memory2314.mavendependencyassistant.OpenMavenDependencySearch"
+                class="io.github.memory2314.mavendependencyassistant.OpenMavenDependencySearchAction"
+                text="Search Maven Dependency"
+                description="Search Maven Central and copy a dependency snippet">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control shift D"/>
+        </action>
+    </actions>
+
 </idea-plugin>
