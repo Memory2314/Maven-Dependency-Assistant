@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Redesign the plugin icon and add a dark theme variant
+
+### 变更
+
+- 重新设计插件图标，并新增深色主题版本
+
 ## [1.0.0] - 2026-08-03
 
 ### Added
