@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-08-08
+
 ### Changed
 
 - Redesign the plugin icon and add a dark theme variant
@@ -34,5 +36,6 @@
 - 缓存与自动预加载，提升查询速度
 - 中英文界面本地化
 
-[Unreleased]: https://github.com/Memory2314/Maven-Dependency-Assistant/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/Memory2314/Maven-Dependency-Assistant/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/Memory2314/Maven-Dependency-Assistant/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/Memory2314/Maven-Dependency-Assistant/commits/v1.0.0
