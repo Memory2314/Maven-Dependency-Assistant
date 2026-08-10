@@ -6,6 +6,14 @@ plugins {
     id("org.jetbrains.changelog")
 }
 
+repositories {
+  mavenCentral()
+
+  intellijPlatform {
+    defaultRepositories()
+  }
+}
+
 dependencies {
     testImplementation(libs.junit)
     implementation("com.google.code.gson:gson:2.14.0")
